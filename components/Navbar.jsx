@@ -1,6 +1,6 @@
 "use client";
 // react & next
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -29,9 +29,11 @@ export default function Navbar() {
         },
     ];
 
-    window.addEventListener("scroll", () => {
-        setNavActive(false);
-    });
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setNavActive(false);
+        });
+    }, []);
 
     return (
         <nav className="container py-8">
